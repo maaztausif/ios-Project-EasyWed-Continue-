@@ -1,0 +1,497 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26F23C98FDB1ABB8B3CB2DD9 /* Pods_Easy_Wedding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4634219F76A6785B299ED1A6 /* Pods_Easy_Wedding.framework */; };
+		C544C41324C51195003D4993 /* HallInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C544C41124C51195003D4993 /* HallInfoTableViewCell.swift */; };
+		C544C41424C51196003D4993 /* HallInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C544C41224C51195003D4993 /* HallInfoTableViewCell.xib */; };
+		C55287CA24C1FB6400E8173E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55287C924C1FB6400E8173E /* AppDelegate.swift */; };
+		C55287CC24C1FB6400E8173E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55287CB24C1FB6400E8173E /* SceneDelegate.swift */; };
+		C55287CE24C1FB6400E8173E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55287CD24C1FB6400E8173E /* ViewController.swift */; };
+		C55287D124C1FB6400E8173E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55287CF24C1FB6400E8173E /* Main.storyboard */; };
+		C55287D324C1FB6C00E8173E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C55287D224C1FB6C00E8173E /* Assets.xcassets */; };
+		C55287D624C1FB6C00E8173E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55287D424C1FB6C00E8173E /* LaunchScreen.storyboard */; };
+		C55287E224C2286000E8173E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C55287E124C2285F00E8173E /* GoogleService-Info.plist */; };
+		C55287E424C22BF100E8173E /* ManagerSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55287E324C22BEE00E8173E /* ManagerSignUpViewController.swift */; };
+		C55287E624C22F7A00E8173E /* ManagerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55287E524C22F7A00E8173E /* ManagerLoginViewController.swift */; };
+		C55287E824C2343B00E8173E /* MainManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55287E724C2343A00E8173E /* MainManagerViewController.swift */; };
+		C5564BA624C60C1A002175BD /* hallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5564BA524C60C1A002175BD /* hallInfo.swift */; };
+		C5564BA824C6154A002175BD /* ManagerGetHallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5564BA724C6154A002175BD /* ManagerGetHallViewController.swift */; };
+		C5D4343724C306A80097C512 /* ManagerHallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4343624C306A80097C512 /* ManagerHallViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		068E25E119BF892F6070B1FD /* Pods-Easy_Wedding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy_Wedding.release.xcconfig"; path = "Target Support Files/Pods-Easy_Wedding/Pods-Easy_Wedding.release.xcconfig"; sourceTree = "<group>"; };
+		4634219F76A6785B299ED1A6 /* Pods_Easy_Wedding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Easy_Wedding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A613AA8C68D01689C8008A53 /* Pods-Easy_Wedding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy_Wedding.debug.xcconfig"; path = "Target Support Files/Pods-Easy_Wedding/Pods-Easy_Wedding.debug.xcconfig"; sourceTree = "<group>"; };
+		C544C41124C51195003D4993 /* HallInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallInfoTableViewCell.swift; sourceTree = "<group>"; };
+		C544C41224C51195003D4993 /* HallInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HallInfoTableViewCell.xib; sourceTree = "<group>"; };
+		C55287C624C1FB6400E8173E /* Easy_Wedding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Easy_Wedding.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C55287C924C1FB6400E8173E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C55287CB24C1FB6400E8173E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C55287CD24C1FB6400E8173E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C55287D024C1FB6400E8173E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C55287D224C1FB6C00E8173E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C55287D524C1FB6C00E8173E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C55287D724C1FB6C00E8173E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C55287E124C2285F00E8173E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Ios-Project-EasyWedd-master/Easy_Wedding/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C55287E324C22BEE00E8173E /* ManagerSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSignUpViewController.swift; sourceTree = "<group>"; };
+		C55287E524C22F7A00E8173E /* ManagerLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerLoginViewController.swift; sourceTree = "<group>"; };
+		C55287E724C2343A00E8173E /* MainManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManagerViewController.swift; sourceTree = "<group>"; };
+		C5564BA524C60C1A002175BD /* hallInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hallInfo.swift; sourceTree = "<group>"; };
+		C5564BA724C6154A002175BD /* ManagerGetHallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerGetHallViewController.swift; sourceTree = "<group>"; };
+		C5D4343624C306A80097C512 /* ManagerHallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerHallViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C55287C324C1FB6400E8173E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26F23C98FDB1ABB8B3CB2DD9 /* Pods_Easy_Wedding.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94227203AD78B66CE41FDFCE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4634219F76A6785B299ED1A6 /* Pods_Easy_Wedding.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C55287BD24C1FB6400E8173E = {
+			isa = PBXGroup;
+			children = (
+				C55287C824C1FB6400E8173E /* Easy_Wedding */,
+				C55287C724C1FB6400E8173E /* Products */,
+				DBCB2D977472F71EEF8ABE91 /* Pods */,
+				94227203AD78B66CE41FDFCE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C55287C724C1FB6400E8173E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C55287C624C1FB6400E8173E /* Easy_Wedding.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C55287C824C1FB6400E8173E /* Easy_Wedding */ = {
+			isa = PBXGroup;
+			children = (
+				C55287D724C1FB6C00E8173E /* Info.plist */,
+				C55287E024C1FBD400E8173E /* Supporting File */,
+				C55287DF24C1FBC400E8173E /* Model */,
+				C55287DE24C1FBB700E8173E /* Controller */,
+				C55287DD24C1FBAB00E8173E /* View */,
+			);
+			path = Easy_Wedding;
+			sourceTree = "<group>";
+		};
+		C55287DD24C1FBAB00E8173E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C55287CF24C1FB6400E8173E /* Main.storyboard */,
+				C55287D424C1FB6C00E8173E /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C55287DE24C1FBB700E8173E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C55287C924C1FB6400E8173E /* AppDelegate.swift */,
+				C55287CB24C1FB6400E8173E /* SceneDelegate.swift */,
+				C55287CD24C1FB6400E8173E /* ViewController.swift */,
+				C55287E324C22BEE00E8173E /* ManagerSignUpViewController.swift */,
+				C55287E524C22F7A00E8173E /* ManagerLoginViewController.swift */,
+				C55287E724C2343A00E8173E /* MainManagerViewController.swift */,
+				C5D4343624C306A80097C512 /* ManagerHallViewController.swift */,
+				C5564BA724C6154A002175BD /* ManagerGetHallViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C55287DF24C1FBC400E8173E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C544C41124C51195003D4993 /* HallInfoTableViewCell.swift */,
+				C544C41224C51195003D4993 /* HallInfoTableViewCell.xib */,
+				C5564BA524C60C1A002175BD /* hallInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C55287E024C1FBD400E8173E /* Supporting File */ = {
+			isa = PBXGroup;
+			children = (
+				C55287E124C2285F00E8173E /* GoogleService-Info.plist */,
+				C55287D224C1FB6C00E8173E /* Assets.xcassets */,
+			);
+			path = "Supporting File";
+			sourceTree = "<group>";
+		};
+		DBCB2D977472F71EEF8ABE91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A613AA8C68D01689C8008A53 /* Pods-Easy_Wedding.debug.xcconfig */,
+				068E25E119BF892F6070B1FD /* Pods-Easy_Wedding.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C55287C524C1FB6400E8173E /* Easy_Wedding */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C55287DA24C1FB6C00E8173E /* Build configuration list for PBXNativeTarget "Easy_Wedding" */;
+			buildPhases = (
+				F1C928748EF7AA5ED4FFD160 /* [CP] Check Pods Manifest.lock */,
+				C55287C224C1FB6400E8173E /* Sources */,
+				C55287C324C1FB6400E8173E /* Frameworks */,
+				C55287C424C1FB6400E8173E /* Resources */,
+				85E98FFE38865E76A7530F35 /* [CP] Embed Pods Frameworks */,
+				A6ECC96FD04627BDD2666F7A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Easy_Wedding;
+			productName = Easy_Wedding;
+			productReference = C55287C624C1FB6400E8173E /* Easy_Wedding.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C55287BE24C1FB6400E8173E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "maaz bin tausif";
+				TargetAttributes = {
+					C55287C524C1FB6400E8173E = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = C55287C124C1FB6400E8173E /* Build configuration list for PBXProject "Easy_Wedding" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C55287BD24C1FB6400E8173E;
+			productRefGroup = C55287C724C1FB6400E8173E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C55287C524C1FB6400E8173E /* Easy_Wedding */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C55287C424C1FB6400E8173E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55287D624C1FB6C00E8173E /* LaunchScreen.storyboard in Resources */,
+				C55287E224C2286000E8173E /* GoogleService-Info.plist in Resources */,
+				C55287D324C1FB6C00E8173E /* Assets.xcassets in Resources */,
+				C544C41424C51196003D4993 /* HallInfoTableViewCell.xib in Resources */,
+				C55287D124C1FB6400E8173E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		85E98FFE38865E76A7530F35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Easy_Wedding/Pods-Easy_Wedding-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Easy_Wedding/Pods-Easy_Wedding-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Easy_Wedding/Pods-Easy_Wedding-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6ECC96FD04627BDD2666F7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Easy_Wedding/Pods-Easy_Wedding-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Easy_Wedding/Pods-Easy_Wedding-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Easy_Wedding/Pods-Easy_Wedding-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1C928748EF7AA5ED4FFD160 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Easy_Wedding-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C55287C224C1FB6400E8173E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55287E424C22BF100E8173E /* ManagerSignUpViewController.swift in Sources */,
+				C5564BA624C60C1A002175BD /* hallInfo.swift in Sources */,
+				C5564BA824C6154A002175BD /* ManagerGetHallViewController.swift in Sources */,
+				C55287CE24C1FB6400E8173E /* ViewController.swift in Sources */,
+				C5D4343724C306A80097C512 /* ManagerHallViewController.swift in Sources */,
+				C55287CA24C1FB6400E8173E /* AppDelegate.swift in Sources */,
+				C55287CC24C1FB6400E8173E /* SceneDelegate.swift in Sources */,
+				C55287E624C22F7A00E8173E /* ManagerLoginViewController.swift in Sources */,
+				C544C41324C51195003D4993 /* HallInfoTableViewCell.swift in Sources */,
+				C55287E824C2343B00E8173E /* MainManagerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C55287CF24C1FB6400E8173E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C55287D024C1FB6400E8173E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C55287D424C1FB6C00E8173E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C55287D524C1FB6C00E8173E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C55287D824C1FB6C00E8173E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C55287D924C1FB6C00E8173E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C55287DB24C1FB6C00E8173E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A613AA8C68D01689C8008A53 /* Pods-Easy_Wedding.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Easy_Wedding/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "maJor.Easy-Wedding";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C55287DC24C1FB6C00E8173E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 068E25E119BF892F6070B1FD /* Pods-Easy_Wedding.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Easy_Wedding/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "maJor.Easy-Wedding";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C55287C124C1FB6400E8173E /* Build configuration list for PBXProject "Easy_Wedding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55287D824C1FB6C00E8173E /* Debug */,
+				C55287D924C1FB6C00E8173E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C55287DA24C1FB6C00E8173E /* Build configuration list for PBXNativeTarget "Easy_Wedding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55287DB24C1FB6C00E8173E /* Debug */,
+				C55287DC24C1FB6C00E8173E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C55287BE24C1FB6400E8173E /* Project object */;
+}

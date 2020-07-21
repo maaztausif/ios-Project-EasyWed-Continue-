@@ -1,0 +1,6 @@
+framework module Pods_Easy_Wedding {
+  umbrella header "Pods-Easy_Wedding-umbrella.h"
+
+  export *
+  module * { export * }
+}
