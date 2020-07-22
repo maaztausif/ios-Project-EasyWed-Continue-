@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 
 class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
@@ -16,13 +17,16 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
     var hallArray = [HallInfo]()
     let db = Firestore.firestore()
     var auth = Auth.auth().currentUser!.uid
+    var databaseRef: DatabaseReference!
+    var image:UIImage! = nil
+    var photoArray = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hallTableView.delegate = self
         hallTableView.dataSource = self
 //        hallTableView.separatorStyle = .none
-        
+        retrieveImages()
         retrieveData()
         
         hallTableView.register(UINib(nibName: "HallInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "hallCell")
@@ -51,6 +55,8 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
         cell.lbl_HallName.text = hallArray[indexPath.row].hall_Name
         cell.lbl_Price.text = hallArray[indexPath.row].rupees
         cell.lbl_NoOfPeople.text = hallArray[indexPath.row].no_Of_People
+        cell.hallImage.image = image
+//        cell.hallImage.image = photoArray[0]
         print("cell he ye ======= \(hallArray[indexPath.row].hall_Name)--")
         print("hall name of hall array = \(hallArray[0].hall_Name)=============")
         return cell
@@ -92,5 +98,139 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
 //        print("hall name of hall array = \(hallArray[0].hall_Name)=============")
 //        self.hallTableView.reloadData()
     }
+    
+    
+    func retrieveImages(){
+        print("retrieve images")
+        var i = 0
+        
+        while i != 100{
+            
+            let storageRef = Storage.storage().reference().child("user:\(auth)/myImage\(i)")
+                    storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                      if  error != nil {
+                        // Uh-oh, an error occurred!
+                        print("/ Uh-oh, an error occurred!")
+                        i = 100
+                      } else {
+                        // Data for "images/island.jpg" is returned
+                        self.image = UIImage(data: data!)
+                        self.photoArray.append(self.image)
+                        print("\(self.image?.description)=======bhai ye discription he")
+                        print("photo array = \(self.photoArray[i].description)=======bhai ye discription he")
 
-}
+                        self.hallTableView.reloadData()
+                      }
+                    }
+            i = i+1
+        }
+        
+
+        
+        
+        
+        
+        
+        
+//        let dbRef =  Database.database().reference().child("user:\(auth)")
+//        dbRef.observeEventType(.childAdded, withBlock: { (snapshot) in
+//          // Get download URL from snapshot
+//            let downloadURL = snapshot.value as! String
+//          // Create a storage reference from the URL
+//          let storageRef = storage.referenceFromURL(downloadURL)
+//          // Download the data, assuming a max size of 1MB (you can change this as necessary)
+//          storageRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
+//            // Create a UIImage, add it to the array
+//            let pic = UIImage(data: data)
+//            picArray.append(pic)
+//          })
+//        })
+        
+        // Create a reference to the file you want to download
+//        let islandRef = Database.database().ref   storageRef.child("images/island.jpg")
+//        let storageRef = Storage.storage().reference().child("user:\(auth)")
+
+//        storageRef.list(withMaxResults: 1 * 1024 * 1024) { (data, error) in
+//                      if  error != nil {
+//                        // Uh-oh, an error occurred!
+//                        print("/ Uh-oh, an error occurred!")
+//                      } else {
+//                        // Data for "images/island.jpg" is returned
+//
+//                        for item in data.items{
+//                            self.image = UIImage(cgImage: item as! CGImage)
+//
+//                            self.photoArray.append(UIImage(cgImage: item as! CGImage))
+//                            print("item = \(item)======")
+//                            print("\(self.image.description) = = == = = = ")
+////                            self.photoArray.append(UIImage(data: item)!)
+//                        }
+//
+//
+////                        self.image = UIImage(data: data)
+////                        print("\(self.image?.description)=======bhai ye discription he")
+////                        self.hallTableView.reloadData()
+//                      }
+//                    }
+        }
+        
+//        storageRef.listAll { (result, error) in
+//            if error != nil{
+//                print("/ Uh-oh, an error occurred!")
+//
+//            }else{
+//                for item in result.items {
+//                  // The items under storageReference.
+//                    self.photoArray.append(UIImage(cgImage: item as! CGImage))
+//                }
+//            }
+//        }
+//    var storageRef = firebase.storage().ref("your_folder");
+
+//        storageRef.listAll().then(function(result) {
+//          result.items.forEach(function(imageRef) {
+//            // And finally display them
+//            displayImage(imageRef);
+//          });
+//        }).catch(function(error) {
+//          // Handle any errors
+//        })
+        
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+//        storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+//          if  error != nil {
+//            // Uh-oh, an error occurred!
+//            print("/ Uh-oh, an error occurred!")
+//          } else {
+//            // Data for "images/island.jpg" is returned
+//            self.image = UIImage(data: data!)
+//            print("\(self.image?.description)=======bhai ye discription he")
+//            self.hallTableView.reloadData()
+//          }
+//        }
+ 
+        //        let storageRef = Storage.storage().reference().child("user:\(auth)")
+
+//        let dbRef = Storage.storage().reference().child("user:\(auth)")
+//
+//        dbRef.
+//
+//        dbRef.observeEventType(.ChildAdded, withBlock: { (snapshot) in
+//          // Get download URL from snapshot
+//          let downloadURL = snapshot.value() as! String
+//          // Create a storage reference from the URL
+//          let storageRef = storage.referenceFromURL(downloadURL)
+//          // Download the data, assuming a max size of 1MB (you can change this as necessary)
+//          storageRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
+//            // Create a UIImage, add it to the array
+//            let pic = UIImage(data: data)
+//            picArray.append(pic)
+//          })
+//        })
+        
+    }
+
+
+
+
+
