@@ -55,7 +55,8 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
         cell.lbl_HallName.text = hallArray[indexPath.row].hall_Name
         cell.lbl_Price.text = hallArray[indexPath.row].rupees
         cell.lbl_NoOfPeople.text = hallArray[indexPath.row].no_Of_People
-        cell.hallImage.image = image
+        //cell.hallImage.image = image
+        cell.imagesArray = photoArray
 //        cell.hallImage.image = photoArray[0]
         print("cell he ye ======= \(hallArray[indexPath.row].hall_Name)--")
         print("hall name of hall array = \(hallArray[0].hall_Name)=============")
@@ -102,28 +103,31 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
     
     func retrieveImages(){
         print("retrieve images")
-        var i = 0
         
-        while i != 100{
-            
+        
+        for i in 0...15{
             let storageRef = Storage.storage().reference().child("user:\(auth)/myImage\(i)")
                     storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
                       if  error != nil {
                         // Uh-oh, an error occurred!
                         print("/ Uh-oh, an error occurred!")
-                        i = 100
+                        
                       } else {
                         // Data for "images/island.jpg" is returned
                         self.image = UIImage(data: data!)
                         self.photoArray.append(self.image)
-                        print("\(self.image?.description)=======bhai ye discription he")
-                        print("photo array = \(self.photoArray[i].description)=======bhai ye discription he")
-
+                        print(" i = \(i) =  =  =\(self.image?.description)=======bhai ye discription he")
+                       // print("photo array \(i) = \(self.photoArray[i].description)=======bhai ye discription he")
                         self.hallTableView.reloadData()
                       }
                     }
-            i = i+1
         }
+         
+        
+
+          //  i = i+1
+
+        
         
 
         
