@@ -26,12 +26,13 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         retrieveImages()
+//        retrieveData()
+        retrieveDocuments()
 
         hallTableView.delegate = self
         hallTableView.dataSource = self
 //        hallTableView.separatorStyle = .none
-        retrieveDocuments()
-        retrieveData()
+
         
         
         
@@ -81,7 +82,7 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
         print(" hall 1 = \(documentArray[0])")
         print(" hall 2 = \(documentArray[1])")
         print(" hall 3 = \(documentArray[2])")
-        self.hallTableView.reloadData()
+//        self.hallTableView.reloadData()
 
     }
     
@@ -155,7 +156,6 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
     func retrieveDocuments(){
         
         print("retrieve Document data =============")
-        let hallInfo = HallInfo()
         
         db.collection("user:\(auth)").getDocuments { (ducomentSnapshot, error) in
                    if error != nil{
@@ -165,7 +165,11 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
                     for document in ducomentSnapshot!.documents {
                           print("\(document.documentID) => \(document.data())")
                         self.documentArray.append(document.documentID)
+                        var hallInfo = HallInfo()
+
 //                        print("hall name=\(document["Hall Name"])!!!!!!!!!!!!!!!!!!!!!!!!!")
+                        var a = document["Hall Name"] as! String
+                        print("var a = \(a)!!!!!!!!!!!!!!!!!!!!!!!!!")
                         hallInfo.hall_Name = document["Hall Name"] as! String
                         hallInfo.no_Of_People = document["No Of People"] as! String
                         hallInfo.rupees = document["Phone No"] as! String
@@ -173,6 +177,7 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
                         print("\(hallInfo.hall_Name)===================")
                         self.hallArray.append(hallInfo)
                         print("hall name of hall array = \(self.hallArray[0].hall_Name)=============")
+                        self.hallTableView.reloadData()
 
                     }
 //                    self.hallTableView.reloadData()
@@ -180,8 +185,10 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
             }
         
         }
-        self.hallTableView.reloadData()
 
+
+//        self.hallTableView.reloadData()
+        print("ye ab chala he reload wala--------------------")
     }
     
     func retrieveImages(){
