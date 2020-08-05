@@ -21,13 +21,13 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
     var image:UIImage! = nil
     var photoArray = [UIImage]()
     var documentArray = [String]()
-    
+    var allPhotoArray = [[UIImage]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        retrieveImages()
 //        retrieveData()
         retrieveDocuments()
+        retrieveImages()
 
         hallTableView.delegate = self
         hallTableView.dataSource = self
@@ -194,26 +194,35 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
     func retrieveImages(){
         print("retrieve images")
         
-        
-        for var i in 0...15{
-            let storageRef = Storage.storage().reference().child("user:\(auth)/myImage\(i)")
-                    storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                      if  error != nil {
-                        // Uh-oh, an error occurred!
-                        print("/ Uh-oh, an error occurred!")
-                        i = 16
-                      } else {
-                        // Data for "images/island.jpg" is returned
-                        self.image = UIImage(data: data!)
-                        self.photoArray.append(self.image)
-                        print(" i = \(i) =  =  =\(self.image?.description)=======bhai ye discription he")
-                       // print("photo array \(i) = \(self.photoArray[i].description)=======bhai ye discription he")
-                        self.hallTableView.reloadData()
-                      }
-                    }
+        if documentArray.count == 0{
+            
+        }else{
+            for var i in 0...15{
+                    let storageRef = Storage.storage().reference().child("user:\(auth):\(documentArray[i])/myImage\(i)")
+                            storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                              if  error != nil {
+                                // Uh-oh, an error occurred!
+                                print("/ Uh-oh, an error occurred!")
+                                i = 16
+                              } else {
+                                // Data for "images/island.jpg" is returned
+                                self.image = UIImage(data: data!)
+                                self.photoArray.append(self.image)
+                                print(" i = \(i) =  =  =\(self.image?.description)=======bhai ye discription he")
+                               // print("photo array \(i) = \(self.photoArray[i].description)=======bhai ye discription he")
+                                self.hallTableView.reloadData()
+                                
+                              }
+                            }
+
+
+            }
+            allPhotoArray.append(photoArray)
+
         }
-         
         
+
+         
 
           //  i = i+1
 

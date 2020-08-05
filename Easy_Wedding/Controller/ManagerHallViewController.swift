@@ -203,7 +203,7 @@ class ManagerHallViewController: UIViewController,ImageSlideshowDelegate {
             
             for image in photoArray{
                 
-                let storageRef = Storage.storage().reference().child("user:\(auth)/myImage\(i)")
+                let storageRef = Storage.storage().reference().child("user:\(auth):\(txt_HallName.text!)/myImage\(i)")
                 if let uploadData = image.pngData() {
 
                     storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
