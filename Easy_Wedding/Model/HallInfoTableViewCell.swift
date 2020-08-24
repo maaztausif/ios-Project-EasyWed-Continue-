@@ -35,10 +35,12 @@ class HallInfoTableViewCell: UITableViewCell {
      //   self.image_Background.image = images[i]
             //hallImage.image = UIImage.init(named: imagesArray[i])
         //hallImage.image = UIImage.init(cgImage: imagesArray[i] as! CGImage)
+        print("cell ka imageArray count he ye     =========\(imagesArray.count)")
         hallImage.image = UIImage(data: imagesArray[i].pngData()!)
         //var c = imagesArray.count
         if i<imagesArray.count-1{
             i+=1
+            print("Cell Ka Print hua he ======== \(i)")
         }
         else{
             i=0
