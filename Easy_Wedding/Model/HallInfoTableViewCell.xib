@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="managerBack" translatesAutoresizingMaskIntoConstraints="NO" id="qYa-93-nvC">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qYa-93-nvC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -53,7 +53,4 @@
             <point key="canvasLocation" x="-297.10144927536237" y="39.508928571428569"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="managerBack" width="2592" height="3888"/>
-    </resources>
 </document>

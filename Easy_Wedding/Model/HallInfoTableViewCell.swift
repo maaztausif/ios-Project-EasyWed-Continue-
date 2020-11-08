@@ -16,6 +16,10 @@ class HallInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var hallImage: UIImageView!
     
     var imagesArray = [UIImage]()
+    var allImageArray = [[UIImage]]()
+//    var image = [UIImage]()
+    var images = [UIImage]()
+
     var i = 0
 
     override func awakeFromNib() {
@@ -26,7 +30,8 @@ class HallInfoTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        allImageArray.append(imagesArray)
+        var image = allImageArray[0]
         // Configure the view for the selected state
         
 //                Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(imageChange), userInfo: nil, repeats: true)
@@ -36,6 +41,13 @@ class HallInfoTableViewCell: UITableViewCell {
             //hallImage.image = UIImage.init(named: imagesArray[i])
         //hallImage.image = UIImage.init(cgImage: imagesArray[i] as! CGImage)
         print("cell ka imageArray count he ye     =========\(imagesArray.count)")
+//        var image = allImageArray[0]
+//        allImageArray.append(imagesArray)
+//        var image = allImageArray[0]
+
+//        print("image = \(image.count)")
+//        print("image = \(image.description)")
+        print("image array = \(allImageArray.count)")
         hallImage.image = UIImage(data: imagesArray[i].pngData()!)
         //var c = imagesArray.count
         if i<imagesArray.count-1{

@@ -23,8 +23,8 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
     var documentArray = [String]()
     var allPhotoArray = [[UIImage]]()
     var documentsNameArray = [String]()
-    
-    
+    var c = "check"
+    let serialQueue = DispatchQueue(label: "swiftlee.serial.queue")
     override func viewDidLoad() {
         super.viewDidLoad()
 //        retrieveData()
@@ -39,7 +39,6 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
 ////            self.retrieveDocuments()
 //
 //        }
-        let serialQueue = DispatchQueue(label: "swiftlee.serial.queue")
 
 //        func firstAsyncRequest(completionHandler: @escaping () -> Void) {
 //          // Do Stuff
@@ -54,17 +53,21 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
 //
 //        }
         
-        serialQueue.async {
+        serialQueue.async{
             print("Task 1 started")
             self.getDocuments()
-
             print("Task 1 finished")
         }
         serialQueue.async {
-            print("Task 2 started")
+             print("Task 2 started")
             self.retrieveImages()
+            print("task 2 complete")
+        }
+        serialQueue.async {
+            print("Task 3 started")
+            //self.retrieveImages()
             self.retrieveDocuments()
-            print("Task 2 finished")
+            print("Task 3 finished")
         }
 //        retrieveDocuments()
 //        retrieveImages()
@@ -98,11 +101,16 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("table view cell")
+//        sleep(10)
+ //       allPhotoArray.append(photoArray)
+        print("\(allPhotoArray.count)")
         let cell = tableView.dequeueReusableCell(withIdentifier: "hallCell", for: indexPath) as! HallInfoTableViewCell
         cell.lbl_HallName.text = hallArray[indexPath.row].hall_Name
         cell.lbl_Price.text = hallArray[indexPath.row].rupees
         cell.lbl_NoOfPeople.text = hallArray[indexPath.row].no_Of_People
         //cell.hallImage.image = image
+        cell.allImageArray = allPhotoArray
         cell.imagesArray = photoArray
         //cell.hallImage.image = photoArray[0]
         print("cell he ye ======= \(hallArray[indexPath.row].hall_Name)--")
@@ -243,31 +251,47 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
 //        print("document array he ============= \(self.documentsNameArray[0])")
 //                print("document array he ============= \(self.documentArray[0])")
 //        getDocuments()
-
-            for var i in 0...15{
+        
+         for var i in 0...15{
                 let storageRef = Storage.storage().reference().child("user:\(auth):\(self.documentsNameArray[0])/myImage\(i)")
                             storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                              if  error != nil {
+                                check: if  error != nil {
                                 // Uh-oh, an error occurred!
-                                print("/ Uh-oh, an error occurred!")
-                                i = 16
-                              } else {
+                                print("/ Uh-oh, an error occurred! \(i)")
                                 
+                                
+                                } else {
+                                    
                                 // Data for "images/island.jpg" is returned
-                                print("image to ai he bhai ==================11111")
+                                print("user:\(self.auth):\(self.documentsNameArray[0])/myImage\(i)")
+                                print("image to ai he bhai ==================11111   \(i)")
                                 self.image = UIImage(data: data!)
                                 self.photoArray.append(self.image)
-                                print(" i = \(i) =  =  =\(self.image?.description)=======bhai ye discription he")
+//                                print(" i = \(i) =  =  =\(self.image?.description)=======bhai ye discription he")
                                // print("photo array \(i) = \(self.photoArray[i].description)=======bhai ye discription he")
                                 self.hallTableView.reloadData()
                                 print("\(self.documentsNameArray.count)")
+                                    
+
                               }
+//                                sleep(5)
+//                                self.allPhotoArray.append(self.photoArray)
+//                                print("all photo array wala print ================= \(self.allPhotoArray.count)")
+//                                print("description : \(self.allPhotoArray[0].description)")
                             }
-
-
+//            sleep(5)
+//            print("break k upper wala he===========")
+                if i == 16{
+                    print("Break chala he bhai !")
+                    
+                    break
+                }
+            //appendImmage()
             }
-            allPhotoArray.append(photoArray)
-            print("all photo array wala print =================")
+//            sleep(4)
+//            allPhotoArray.append(photoArray)
+//        print("all photo array wala print ================= \(allPhotoArray.count)")
+//        print("description : \(allPhotoArray[0].description)")
  //       }
         
 
@@ -406,6 +430,13 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
 //        // Call completion, when finished, success or faliure
 //        completion(success: true)
 //    }
+    
+    func appendImmage(){
+        sleep(10)
+        self.allPhotoArray.append(self.photoArray)
+        print("all photo array wala print ================= \(self.allPhotoArray.count)")
+        print("description : \(self.allPhotoArray[0].description)")
+    }
 }
 
 
