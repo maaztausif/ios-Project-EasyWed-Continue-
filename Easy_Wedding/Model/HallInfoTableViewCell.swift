@@ -30,8 +30,8 @@ class HallInfoTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        allImageArray.append(imagesArray)
-        var image = allImageArray[0]
+//        allImageArray.append(imagesArray)
+//        var image = allImageArray[0]
         // Configure the view for the selected state
         
 //                Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(imageChange), userInfo: nil, repeats: true)
@@ -47,7 +47,8 @@ class HallInfoTableViewCell: UITableViewCell {
 
 //        print("image = \(image.count)")
 //        print("image = \(image.description)")
-        print("image array = \(allImageArray.count)")
+//        imagesArray = allImageArray[0]
+//        print("image array = \(allImageArray.count)")
         hallImage.image = UIImage(data: imagesArray[i].pngData()!)
         //var c = imagesArray.count
         if i<imagesArray.count-1{

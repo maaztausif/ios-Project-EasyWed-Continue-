@@ -27,50 +27,55 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
     let serialQueue = DispatchQueue(label: "swiftlee.serial.queue")
     override func viewDidLoad() {
         super.viewDidLoad()
-//        retrieveData()
         
-        
-//        let backgroundQueue = DispatchQueue(label: "com.app.queue", attributes: .concurrent)
-//        backgroundQueue.async {
-//          //  self.retrieveDocuments()
-//        }
-//        backgroundQueue.async {
-//            self.retrieveImages()
-////            self.retrieveDocuments()
-//
-//        }
-
-//        func firstAsyncRequest(completionHandler: @escaping () -> Void) {
-//          // Do Stuff
-//            print("synchronize")
-//            self.getDocuments()
-//
-//          completionHandler()
-//
-//        }
-//        firstAsyncRequest {
-//            self.getDocuments()
-//
-//        }
-        
-        serialQueue.async{
-            print("Task 1 started")
-            self.getDocuments()
-            print("Task 1 finished")
-        }
-        serialQueue.async {
-             print("Task 2 started")
-            self.retrieveImages()
-            print("task 2 complete")
-        }
-        serialQueue.async {
-            print("Task 3 started")
-            //self.retrieveImages()
-            self.retrieveDocuments()
-            print("Task 3 finished")
-        }
-//        retrieveDocuments()
+//        getDocuments()
 //        retrieveImages()
+//        retrieveDocuments()
+
+        //        retrieveData()
+                
+                
+        //        let backgroundQueue = DispatchQueue(label: "com.app.queue", attributes: .concurrent)
+        //        backgroundQueue.async {
+        //          //  self.retrieveDocuments()
+        //        }
+        //        backgroundQueue.async {
+        //            self.retrieveImages()
+        ////            self.retrieveDocuments()
+        //
+        //        }
+
+                func firstAsyncRequest(completionHandler: @escaping () -> Void) {
+                  // Do Stuff
+                    print("synchronize")
+//                    self.getDocuments()
+        
+                  completionHandler()
+        
+                }
+//                firstAsyncRequest {
+//                    self.getDocuments()
+//
+//                }
+                
+                serialQueue.async{
+                    print("Task 1 started")
+                    self.getDocuments()
+                    print("Task 1 finished")
+                }
+                serialQueue.async {
+                     print("Task 2 started")
+                    self.retrieveImages()
+                    print("task 2 complete")
+                }
+                serialQueue.async {
+                    print("Task 3 started")
+//                    self.retrieveImages()
+                    self.retrieveDocuments()
+                    print("Task 3 finished")
+                }
+        //        retrieveDocuments()
+        //        retrieveImages()
 
         hallTableView.delegate = self
         hallTableView.dataSource = self
@@ -110,8 +115,9 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
         cell.lbl_Price.text = hallArray[indexPath.row].rupees
         cell.lbl_NoOfPeople.text = hallArray[indexPath.row].no_Of_People
         //cell.hallImage.image = image
-        cell.allImageArray = allPhotoArray
-        cell.imagesArray = photoArray
+//        cell.allImageArray = allPhotoArray[indexPath.row]
+//        cell.imagesArray = photoArray
+        cell.imagesArray = allPhotoArray[indexPath.row]
         //cell.hallImage.image = photoArray[0]
         print("cell he ye ======= \(hallArray[indexPath.row].hall_Name)--")
         print("hall name of hall array = \(hallArray[0].hall_Name)=============")
@@ -227,6 +233,7 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
                         print("hall name of hall array = \(self.hallArray[0].hall_Name)=============")
 //                        self.hallTableView.reloadData()
                         print("document array he ============= \(self.documentsNameArray[0])")
+                        self.hallTableView.reloadData()
                     }
 //                    self.hallTableView.reloadData()
 
@@ -251,9 +258,13 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
 //        print("document array he ============= \(self.documentsNameArray[0])")
 //                print("document array he ============= \(self.documentArray[0])")
 //        getDocuments()
+        for hallName in documentsNameArray{
+//
+        
         
          for var i in 0...15{
-                let storageRef = Storage.storage().reference().child("user:\(auth):\(self.documentsNameArray[0])/myImage\(i)")
+                let storageRef = Storage.storage().reference().child("user:\(auth):\(hallName)/myImage\(i)")
+//            self.documentsNameArray[0]
                             storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
                                 check: if  error != nil {
                                 // Uh-oh, an error occurred!
@@ -288,10 +299,14 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
                 }
             //appendImmage()
             }
-//            sleep(4)
-//            allPhotoArray.append(photoArray)
-//        print("all photo array wala print ================= \(allPhotoArray.count)")
-//        print("description : \(allPhotoArray[0].description)")
+            sleep(5)
+                allPhotoArray.append(photoArray)
+            print("all photo array wala print ================= \(allPhotoArray.count)")
+            print("description : \(allPhotoArray[0].description)")
+    }
+            
+//        self.hallTableView.reloadData()
+//        hallTableView.reloadData()
  //       }
         
 
@@ -409,7 +424,7 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
 
                 db.collection("user:\(auth)").getDocuments { (ducomentSnapshot, error) in
                            if error != nil{
-                               
+                               print("error getting documents")
                            }else{
                             
                             for document in ducomentSnapshot!.documents {
@@ -419,7 +434,10 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
                     }
                 
                 }
+                    print("closure")
     }
+        
+//        print("sleep top")
         sleep(4)
         print(" name array =========!  \(self.documentsNameArray[0])")
 
@@ -432,10 +450,11 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
 //    }
     
     func appendImmage(){
-        sleep(10)
-        self.allPhotoArray.append(self.photoArray)
-        print("all photo array wala print ================= \(self.allPhotoArray.count)")
-        print("description : \(self.allPhotoArray[0].description)")
+//        sleep(10)
+//        self.allPhotoArray.append(self.photoArray)
+//        print("all photo array wala print ================= \(self.allPhotoArray.count)")
+//        print("description : \(self.allPhotoArray[0].description)")
+//        self.hallTableView.reloadData()
     }
 }
 
