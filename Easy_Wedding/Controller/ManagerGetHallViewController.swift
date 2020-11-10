@@ -301,6 +301,7 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
             }
             sleep(5)
                 allPhotoArray.append(photoArray)
+            self.photoArray = [UIImage]()
             print("all photo array wala print ================= \(allPhotoArray.count)")
             print("description : \(allPhotoArray[0].description)")
     }
