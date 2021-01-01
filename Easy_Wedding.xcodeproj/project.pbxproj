@@ -22,6 +22,7 @@
 		C55287E824C2343B00E8173E /* MainManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55287E724C2343A00E8173E /* MainManagerViewController.swift */; };
 		C5564BA624C60C1A002175BD /* hallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5564BA524C60C1A002175BD /* hallInfo.swift */; };
 		C5564BA824C6154A002175BD /* ManagerGetHallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5564BA724C6154A002175BD /* ManagerGetHallViewController.swift */; };
+		C55B9744255C88680041695A /* PrototypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55B9743255C88680041695A /* PrototypeViewController.swift */; };
 		C5D4343724C306A80097C512 /* ManagerHallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4343624C306A80097C512 /* ManagerHallViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		C55287E724C2343A00E8173E /* MainManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManagerViewController.swift; sourceTree = "<group>"; };
 		C5564BA524C60C1A002175BD /* hallInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hallInfo.swift; sourceTree = "<group>"; };
 		C5564BA724C6154A002175BD /* ManagerGetHallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerGetHallViewController.swift; sourceTree = "<group>"; };
+		C55B9743255C88680041695A /* PrototypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeViewController.swift; sourceTree = "<group>"; };
 		C5D4343624C306A80097C512 /* ManagerHallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerHallViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 				C55287E724C2343A00E8173E /* MainManagerViewController.swift */,
 				C5D4343624C306A80097C512 /* ManagerHallViewController.swift */,
 				C5564BA724C6154A002175BD /* ManagerGetHallViewController.swift */,
+				C55B9743255C88680041695A /* PrototypeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				C55287CC24C1FB6400E8173E /* SceneDelegate.swift in Sources */,
 				C55287E624C22F7A00E8173E /* ManagerLoginViewController.swift in Sources */,
 				C544C41324C51195003D4993 /* HallInfoTableViewCell.swift in Sources */,
+				C55B9744255C88680041695A /* PrototypeViewController.swift in Sources */,
 				C55287E824C2343B00E8173E /* MainManagerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -196,6 +196,7 @@ class ManagerHallViewController: UIViewController,ImageSlideshowDelegate {
                     print("Error writing document: \(err)")
                 } else {
                     print("Document successfully written!")
+                    
                 }
             }
             

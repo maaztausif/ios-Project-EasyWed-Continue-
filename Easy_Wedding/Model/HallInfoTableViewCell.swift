@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class HallInfoTableViewCell: UITableViewCell {
+class HallInfoTableViewCell: SwipeTableViewCell {
     
     @IBOutlet weak var lbl_HallName: UILabel!
     @IBOutlet weak var lbl_NoOfPeople: UILabel!
@@ -24,6 +25,18 @@ class HallInfoTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+            guard orientation == .right else { return nil }
+
+            let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+                // handle action by updating model with deletion
+            }
+
+            // customize the action appearance
+            deleteAction.image = UIImage(named: "delete")
+
+            return [deleteAction]
+        }
         // Initialization code
                         Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(imageChange), userInfo: nil, repeats: true)
     }
@@ -59,5 +72,25 @@ class HallInfoTableViewCell: UITableViewCell {
             i=0
         }
 
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            // handle action by updating model with deletion
+        }
+
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "delete")
+
+        return [deleteAction]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .border
+        return options
     }
 }

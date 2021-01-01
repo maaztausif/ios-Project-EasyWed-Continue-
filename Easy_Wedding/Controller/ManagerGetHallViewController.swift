@@ -9,9 +9,10 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+//import SwipeCellKit
 
 
-class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     @IBOutlet weak var hallTableView: UITableView!
     var hallArray = [HallInfo]()
@@ -92,6 +93,59 @@ class ManagerGetHallViewController: UIViewController,UITableViewDataSource,UITab
 //    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 150
 //    }
+    
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        print("==================================================================")
+//        let important = importantAction(at: indexPath.row)
+        let delete = deleteAction(at: indexPath)
+//        let delete = deleteAction(at: indexPath.row)
+        return UISwipeActionsConfiguration(actions:[delete])
+    }
+    
+    func deleteAction(at indexPath: IndexPath) -> UIContextualAction{
+//        let edit = hallArray[indexPath.row]
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            print("delete")
+            completion(true)
+        }
+        print("////////==================================================================")
+
+        action.image = UIImage.init(named: "delete")
+        action.backgroundColor = .red
+        return action
+    }
+    
+    // MARK: - enable swipe cell kit only for current cureent user
+
+       
+        func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+       }
+       
+       // MARK: - Deletion of Donarcell
+
+       
+
+    
+    
+    
+//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+//        guard orientation == .right else { return nil }
+//
+//        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+//            // handle action by updating model with deletion
+//        }
+//
+//        // customize the action appearance
+//        deleteAction.image = UIImage(named: "delete")
+//
+//        return [deleteAction]
+//    }
+    
+
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
